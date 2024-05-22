@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -218,7 +218,7 @@ namespace WindowsFormsApp1
 
         private void LoadItems()
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 300; i++)
             {
                 DeleteProduct(i);
                 DeleteComponent(i);
@@ -419,8 +419,15 @@ namespace WindowsFormsApp1
                     DisplayClients();
 
                     products = (List<Product>)bf.Deserialize(fs);
+                   
+                    foreach(var product in products)
+                    {
+                        //foreach(var component in product.components)
+                        // CreateComponent(component);
+                        if (!products.Contains(product))
+                            CreateProduct(product);//daca sunt deja afisate iteme din fisier,le afiseaza inca odata
+                    }
                     DisplayProducts();
-
                 }
             }
         }
