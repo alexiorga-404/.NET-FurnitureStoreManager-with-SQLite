@@ -1,4 +1,4 @@
-# Furniture-App
+# C# app for managing clients of a furniture store along with the inventory(stored in a database)
 This Windows Forms application provides a user-friendly interface for managing product data and their associated components.  It caters to scenarios where products are composed of individual components (e.g., computers and their hardware, furniture and their parts).
 
 Key functionalities:
